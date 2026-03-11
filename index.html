@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Our Love Story</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Special+Elite&display=swap" rel="stylesheet">
+
+<style>
+body { margin:0; background:black; color:white; font-family:'Indie Flower',cursive; overflow:hidden;}
+.sky { position:fixed; width:100%; height:100%; background:black; z-index:10; display:flex; align-items:center; justify-content:center; flex-direction:column; cursor:pointer;}
+.intro { font-size:30px; text-align:center; opacity:1; }
+.flash { position:fixed; width:100%; height:100%; background:white; opacity:0; z-index:20; transition: opacity 0.3s;}
+.scrapbook { display:none; background:#f5efe6; width:100%; height:100%; color:black; overflow:hidden;}
+.letter { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:500px; background:#fffdf7; padding:40px; box-shadow:0 20px 40px rgba(0,0,0,0.3); font-family:'Special Elite',cursive; line-height:1.7; max-height:80vh; overflow:auto;}
+</style>
+</head>
+<body>
+
+<div class="sky" id="sky">
+  <div class="intro">Our story began with a voice<br>inside a virtual world<br><br>and became the most real thing in my life 💗<br><br>(click anywhere)</div>
+</div>
+
+<div class="flash" id="flash"></div>
+
+<div class="scrapbook" id="book">
+  <div class="letter">
+    <h2 style="text-align:center">March 13 — Our First Year</h2>
+    <p>안녕 자기야,</p>
+    <p>…여기에 전체 편지 붙여 넣으세요…</p>
+    <p>우리의 1주년을 축하해, 내 사랑.</p>
+    <p>너의 별,<br>알레시아</p>
+  </div>
+</div>
+
+<script>
+// click to open scrapbook
+document.addEventListener("DOMContentLoaded", function(){
+  const sky = document.getElementById("sky");
+  const flash = document.getElementById("flash");
+  const book = document.getElementById("book");
+
+  sky.addEventListener("click", function(){
+    flash.style.opacity = "1";
+    setTimeout(() => {
+      flash.style.opacity = "0";
+      sky.style.display = "none";
+      book.style.display = "block";
+      document.body.style.background="#f5efe6";
+    }, 300);
+  });
+});
+</script>
+
+</body>
+</html>
